@@ -63,8 +63,8 @@ input {
 #player {
     display: block;
     margin-top: 20px;
-    border-radius: 20px;
-    border: none;
+    border-radius: 12px;
+    border: 3px solid rgb(0, 0, 0);
     margin-left: auto;
     margin-right: auto;
 }
@@ -86,6 +86,7 @@ input {
     }
     #btn {
         margin-top: 8px;
+        padding: 13px;
     }
     label {
         width: 200px;
@@ -96,6 +97,18 @@ input {
         font-family: 'Rubik', sans-serif;
         margin-bottom: 15px;
         font-size: 18px;
+    }
+    input {
+        height: 35px;
+        flex: 0 0 200px;
+        border-radius: 4px;
+        background-color: #ffffff;
+        width: 250px;
+        font-size: 18px;
+        border: 1px solid #2c2c2c;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
     }
     .navMenu a {
         font-size: 20px;
