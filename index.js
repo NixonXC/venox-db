@@ -9,8 +9,8 @@ var menuList = document.getElementById("navMenu");
     }
 }
 document.getElementById("mov").onclick = function() {
-    window.open("movie.html")
+    window.open("pages/movie.html")
 }
 document.getElementById("gt").onclick = function() {
-    window.open("https://github.com/NixonXC/sam-player")
+    window.open("pages/imdb.html")
 }
