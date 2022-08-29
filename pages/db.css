@@ -67,6 +67,24 @@ input {
     background-color: #2c2c2c;
     color: white;
 }
+#copy {
+    display: none;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 15px;
+    font-size: 15px;
+    font-family: 'Rubik', sans-serif;
+    width: 100px;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+}
+#copy:hover {
+    transition: 0.2s;
+    background-color: #222;
+    color: white;
+}
 @media only screen and (max-width: 768px) {
     .navMenu {
         z-index: 2;
