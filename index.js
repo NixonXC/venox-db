@@ -12,5 +12,5 @@ document.getElementById("mov").onclick = function() {
     window.open("pages/movie.html")
 }
 document.getElementById("gt").onclick = function() {
-    window.open("pages/imdb.html")
+    window.open("pages/db.html")
 }
