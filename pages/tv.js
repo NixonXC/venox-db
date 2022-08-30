@@ -21,7 +21,7 @@ document.getElementById("btn").onclick = function() {
             document.getElementById("movie").style.marginTop = '10px'
             window.alert(msg)
             var ifrm = document.createElement("iframe");
-            ifrm.setAttribute("src", "https://vidsrc.me/embed/" + msg)
+            ifrm.setAttribute("src", "https://vidsrc.me/embed/" + msg + "/" + se + "-" + ep)
             ifrm.setAttribute("id", "player")
             ifrm.setAttribute("allowfullscreen", "true")
             ifrm.style.width = "800px";
