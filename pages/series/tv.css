@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 body {
-    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    color: rgb(255, 255, 255);
     background-color: #181d29;
 }
-.main {
+button {
+    cursor: pointer;
+}
+.movie {
     text-align: center;
-    margin-top: 200px;
-    color: #ffffff;
-    font-family: 'Rubik', sans-serif;
-    font-weight: 100;
-    font-size: 30px;
+    margin-top: 160px;
+    font-size: 25px;
 }
 .navMenu {
     position: absolute;
@@ -37,65 +38,65 @@ body {
 .menu-logo {
     display: none;
 }
-.main {
-    border: none;
-    border-radius: 12px;
-    width: 280px;
-    height: 300px;
-    display: block;
-    background-color: #eee;
+label {
+    width: 75px;
+    margin-right: auto;
+    margin-left: auto;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 20px;
-    margin-top: 200px;
+    line-height: 26px;
+    font-family: 'Rubik', sans-serif;
+    margin-bottom: 15px;
+    font-size: 18px;
 }
-.main h1 {
-    font-size: 35px;
-    color: #000000;
-}
-.main p {
-    color: #000000;
-    font-size: 15px;
-}
-.mov {
+#player {
     display: block;
-    padding: 13px;
+    border-radius: 20px;
     border: none;
-    width: 200px;
-    border-radius: 8px;
-    background-color: #d3d3d3e7;
-    color: black;
-    font-size: 19px;
     margin-left: auto;
-    cursor: pointer;
-    font-family: 'Roboto', sans-serif;
     margin-right: auto;
 }
-.mov:hover {
+input {
+    height: 27px;
+    flex: 0 0 200px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    width: 125px;
+    font-size: 18px;
+    border: 3px solid #2c2c2c;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+input:focus {
+    border: 3px solid #181818;
+}
+::placeholder {
+    color: rgb(24, 24, 24);
+    opacity: 1;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 900;
+}
+#btn {
+    padding: 8px;
+    font-size: 15px;
+    margin-top: -20px;
+    font-family: 'Rubik', sans-serif;
+    width: 70px;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+#btn:hover {
     transition: 0.3s;
     background-color: #222;
     color: white;
 }
-.gt {
-    display: block;
-    padding: 13px;
-    border: none;
-    width: 200px;
-    border-radius: 8px;
-    background-color: #d3d3d3e7;
-    color: black;
-    font-size: 19px;
-    margin-top: 15px;
-    margin-left: auto;
-    cursor: pointer;
-    font-family: 'Roboto', sans-serif;
-    margin-right: auto;
-}
-.gt:hover {
-    transition: 0.2s;
-    background-color: #222;
+#title {
+    margin-top: 20px;
+    font-size: 23px;
     color: white;
+    text-align: center;
 }
 @media only screen and (max-width: 768px) {
     .navMenu {
@@ -105,6 +106,19 @@ body {
         border-radius: 8px;
         left: 78%;
         color: #000000;
+    }
+    #btn {
+        margin-top: 8px;
+    }
+    label {
+        width: 200px;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+        line-height: 10px;
+        font-family: 'Rubik', sans-serif;
+        margin-bottom: 15px;
+        font-size: 18px;
     }
     .navMenu a {
         font-size: 20px;
