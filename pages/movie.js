@@ -22,7 +22,9 @@ document.getElementById("btn").onclick = function() {
             ifrm.setAttribute("allowfullscreen", "true")
             ifrm.style.width = "800px";
             ifrm.style.height = "500px";
+            ifrm.style.marginTop = "20px";
             document.body.appendChild(ifrm);
+            document.getElementById("menu").style.display = "none";
     }
 };}
 var menuList = document.getElementById("navMenu");

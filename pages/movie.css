@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 body {
     font-family: 'Rubik', sans-serif;
-    background-image: url(assets/background.svg);
+    background-image: url(assets/bg.svg);
     color: white;
 }
 button {
@@ -33,7 +33,7 @@ button {
     transition: all 0.2s ease-in-out;
 }
 .navMenu a:hover {
-    color: #ff0000;
+    color: rgb(24, 24, 24);
 }
 .menu-logo {
     display: none;
@@ -49,30 +49,47 @@ label {
     font-size: 18px;
 }
 input {
-    height: 35px;
+    height: 27px;
     flex: 0 0 200px;
-    border-radius: 4px;
+    border-radius: 3px;
     background-color: #ffffff;
-    width: 350px;
+    width: 250px;
     font-size: 18px;
-    border: 1px solid #2c2c2c;
+    border: 3px solid #2c2c2c;
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
 }
+input:focus {
+    border: 3px solid #181818;
+}
+::placeholder {
+    color: rgb(24, 24, 24);
+    opacity: 1;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 900;
+}
 #player {
     display: block;
-    margin-top: 20px;
     border-radius: 12px;
     border: 3px solid rgb(0, 0, 0);
     margin-left: auto;
     margin-right: auto;
 }
 #btn {
-    padding: 15px;
-    border-radius: 4px;
+    padding: 8px;
+    font-size: 15px;
+    margin-top: -20px;
+    font-family: 'Rubik', sans-serif;
+    width: 70px;
+    font-weight: 900;
     border: none;
-    background-color: #2c2c2c;
+    cursor: pointer;
+    border-radius: 3px;
+}
+#btn:hover {
+    transition: 0.3s;
+    background-color: #222;
     color: white;
 }
 @media only screen and (max-width: 768px) {

@@ -19,14 +19,16 @@ document.getElementById("btn").onclick = function() {
         else {
             document.getElementById("navMenu").style.display = 'none'
             document.getElementById("movie").style.marginTop = '10px'
-            window.alert(msg + se + ep)
+            window.alert(msg)
             var ifrm = document.createElement("iframe");
-            ifrm.setAttribute("src", "https://vidsrc.me/embed/" + msg + "/" + se + "-" + ep)
+            ifrm.setAttribute("src", "https://vidsrc.me/embed/" + msg)
             ifrm.setAttribute("id", "player")
             ifrm.setAttribute("allowfullscreen", "true")
             ifrm.style.width = "800px";
             ifrm.style.height = "500px";
+            ifrm.style.marginTop = "20px";
             document.body.appendChild(ifrm);
+            document.getElementById("menu").style.display = "none";
     }
 };}
 var menuList = document.getElementById("navMenu");
