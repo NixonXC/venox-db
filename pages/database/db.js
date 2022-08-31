@@ -32,5 +32,7 @@ function copyTextFromElement() {
 	let element = document.getElementById("result");
 	let elementText = element.textContent;
 	copyText(elementText);
-	alert("Copied Code: " + elementText)
+	setTimeout(() => {
+		alert("Copied Code: " + elementText)
+	}, 0);
 }

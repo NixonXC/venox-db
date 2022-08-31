@@ -92,6 +92,23 @@ input:focus {
     background-color: #222;
     color: white;
 }
+#stp {
+    display: none;
+    padding: 8px;
+    font-size: 15px;
+    margin-top: -20px;
+    font-family: 'Rubik', sans-serif;
+    width: 70px;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+#stp:hover {
+    transition: 0.3s;
+    background-color: #222;
+    color: white;
+}
 #title {
     margin-top: 20px;
     font-size: 23px;
@@ -105,10 +122,6 @@ input:focus {
         border-radius: 8px;
         left: 78%;
         color: #000000;
-    }
-    #btn {
-        margin-top: 8px;
-        padding: 13px;
     }
     label {
         width: 200px;
@@ -125,7 +138,7 @@ input:focus {
         flex: 0 0 200px;
         border-radius: 4px;
         background-color: #ffffff;
-        width: 250px;
+        width: 200px;
         font-size: 18px;
         border: 1px solid #2c2c2c;
         -webkit-transition: 0.5s;

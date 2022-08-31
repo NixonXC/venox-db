@@ -89,15 +89,16 @@ input:focus {
     display: none;
     margin-right: auto;
     margin-left: auto;
-    padding: 11px;
+    padding: 8px;
     font-size: 15px;
     margin-top: -20px;
     font-family: 'Rubik', sans-serif;
     width: 90px;
+    height: 40px;
     font-weight: 900;
     border: none;
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: 3px;
 }
 #copy:hover {
     transition: 0.3s;

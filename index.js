@@ -9,8 +9,8 @@ var menuList = document.getElementById("navMenu");
     }
 }
 document.getElementById("mov").onclick = function() {
-    window.open("pages/movies/mov.html")
+    window.location.href = "pages/movies/mov.html"
 }
 document.getElementById("gt").onclick = function() {
-    window.open("pages/database/db.html")
+    window.location.href = "pages/database/db.html"
 }

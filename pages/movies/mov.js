@@ -1,7 +1,7 @@
 document.getElementById("btn").onclick = function() {
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
-        window.alert("Please Rotate your device for a better experience.")
+        window.alert("Please Rotate your device.")
     }
     id = document.getElementById("mov");
     msg = id.value;
@@ -21,11 +21,16 @@ document.getElementById("btn").onclick = function() {
                 }
             };
             fetch('https://imdb8.p.rapidapi.com/title/find?q=' + msg, options)
-                .then(response => response.json())
-                .then(response => document.getElementById("title").innerHTML = response["results"][0]["title"])
-                .catch(err => console.error(err));
+            .then(response => response.json())
+            .then(response => document.getElementById("title").innerHTML = response["results"][0]["title"])
+            .catch(err => console.error(err));
+            fetch('https://imdb8.p.rapidapi.com/title/find?q=' + msg, options)
+            .then(response => response.json())
+            .then(response => document.title = document.title.replace("VENOX Movies", response["results"][0]["title"] + " | VENOX MOVIES"))
+            .catch(err => console.error(err));
             document.getElementById("navMenu").style.display = 'none'
             document.getElementById("movie").style.marginTop = '10px'
+            document.getElementById("stp").style.display = 'inline-block'
             window.alert(msg)
             var ifrm = document.createElement("iframe");
             ifrm.setAttribute("src", "https://vidsrc.me/embed/" + msg)
@@ -37,7 +42,10 @@ document.getElementById("btn").onclick = function() {
             document.body.appendChild(ifrm);
             document.getElementById("menu").style.display = "none";
     }
-};}	
+};}
+document.getElementById("stp").onclick = function() {
+    window.location.reload()
+}
 var menuList = document.getElementById("navMenu");
     menuList.style.maxHeight = "0px";
     function togglemenu(){

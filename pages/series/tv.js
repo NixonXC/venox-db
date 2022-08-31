@@ -10,7 +10,7 @@ document.getElementById("btn").onclick = function() {
     ep = epi.value;
     se = sea.value;
     if (msg == null, msg.length < 9, msg.length > 9, msg == "") {
-        msg = "tt1300854"
+        return
     }
     else {
         if(document.getElementById("player")){
@@ -25,11 +25,16 @@ document.getElementById("btn").onclick = function() {
                 }
             };
             fetch('https://imdb8.p.rapidapi.com/title/find?q=' + msg, options)
-                .then(response => response.json())
-                .then(response => document.getElementById("title").innerHTML = response["results"][0]["title"])
-                .catch(err => console.error(err));
+            .then(response => response.json())
+            .then(response => document.getElementById("title").innerHTML = response["results"][0]["title"])
+            .catch(err => console.error(err));
+            fetch('https://imdb8.p.rapidapi.com/title/find?q=' + msg, options)
+            .then(response => response.json())
+            .then(response => document.title = document.title.replace("VENOX Series", response["results"][0]["title"] + " | VENOX MOVIES"))
+            .catch(err => console.error(err));
             document.getElementById("navMenu").style.display = 'none'
             document.getElementById("movie").style.marginTop = '10px'
+            document.getElementById("stp").style.display = 'inline-block'
             window.alert(msg)
             var ifrm = document.createElement("iframe");
             ifrm.setAttribute("src", "https://vidsrc.me/embed/" + msg + "/" + se + "-" + ep)
@@ -42,6 +47,9 @@ document.getElementById("btn").onclick = function() {
             document.getElementById("menu").style.display = "none";
     }
 };}
+document.getElementById("stp").onclick = function() {
+    window.location.reload()
+}
 var menuList = document.getElementById("navMenu");
     menuList.style.maxHeight = "0px";
     function togglemenu(){
