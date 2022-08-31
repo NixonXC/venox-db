@@ -60,12 +60,15 @@ input {
     flex: 0 0 200px;
     border-radius: 5px;
     background-color: #ffffff;
-    width: 125px;
+    width: 110px;
     font-size: 18px;
     border: 3px solid #2c2c2c;
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
+}
+#name {
+    width: 150px;
 }
 input:focus {
     border: 3px solid #181818;

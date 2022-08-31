@@ -1,3 +1,15 @@
+function Ifrm(msg) {
+    window.alert(msg)
+    var ifrm = document.createElement("iframe");
+        ifrm.setAttribute("src", "https://vidsrc.me/embed/" + msg)
+        ifrm.setAttribute("id", "player")
+        ifrm.setAttribute("allowfullscreen", "true")
+        ifrm.style.width = "800px";
+        ifrm.style.height = "500px";
+        ifrm.style.marginTop = "20px";
+        document.body.appendChild(ifrm);
+        document.getElementById("menu").style.display = "none";
+}
 document.getElementById("btn").onclick = function() {
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
@@ -31,16 +43,10 @@ document.getElementById("btn").onclick = function() {
             document.getElementById("navMenu").style.display = 'none'
             document.getElementById("movie").style.marginTop = '10px'
             document.getElementById("stp").style.display = 'inline-block'
-            window.alert(msg)
-            var ifrm = document.createElement("iframe");
-            ifrm.setAttribute("src", "https://vidsrc.me/embed/" + msg)
-            ifrm.setAttribute("id", "player")
-            ifrm.setAttribute("allowfullscreen", "true")
-            ifrm.style.width = "800px";
-            ifrm.style.height = "500px";
-            ifrm.style.marginTop = "20px";
-            document.body.appendChild(ifrm);
-            document.getElementById("menu").style.display = "none";
+            fetch('https://imdb8.p.rapidapi.com/title/find?q=' + msg, options)
+            .then(response => response.json())
+            .then(response => Ifrm(msg=response["results"][0]["id"].slice(7, 17).replace("/", "")))
+            .catch(err => console.error(err));
     }
 };}
 document.getElementById("stp").onclick = function() {
