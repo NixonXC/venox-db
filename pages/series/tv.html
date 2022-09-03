@@ -23,9 +23,9 @@
     <div class="movie" id="movie">
         <h1>VENOX SERIES</h1> 
         <label>
-            <input id="name" type="text" placeholder="MOVIE NAME/ID">
-            <input id="sea" type="number" placeholder="SEASON">
-            <input id="epi" type="number" placeholder="EPISODE">
+            <input id="name" type="text" placeholder="SERIES NAME/ID">
+            <input id="sea" type="number" placeholder="SEASON" min="1" oninput="this.value = Math.abs(this.value)">
+            <input id="epi" type="number" placeholder="EPISODE" min="1" oninput="this.value = Math.abs(this.value)">
         </label>
         <button id="btn">Watch</button>
         <button id="stp">Exit</button>

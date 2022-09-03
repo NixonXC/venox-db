@@ -82,27 +82,27 @@ input:focus {
 }
 #btn:hover {
     transition: 0.3s;
-    background-color: #222;
+    background-color: rgb(236, 0, 0);
     color: white;
 }
 #copy {
     display: none;
     margin-right: auto;
     margin-left: auto;
-    padding: 8px;
+    padding: 6px;
     font-size: 15px;
     margin-top: -20px;
     font-family: 'Rubik', sans-serif;
-    width: 90px;
-    height: 40px;
+    width: 85px;
+    height: 38px;
     font-weight: 900;
     border: none;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 4px;
 }
 #copy:hover {
     transition: 0.3s;
-    background-color: #222;
+    background-color: rgb(236, 0, 0);
     color: white;
 }
 @media only screen and (max-width: 768px) {

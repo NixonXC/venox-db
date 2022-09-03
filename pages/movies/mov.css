@@ -89,7 +89,7 @@ input:focus {
 }
 #btn:hover {
     transition: 0.3s;
-    background-color: #222;
+    background-color: rgb(236, 0, 0);
     color: white;
 }
 #stp {
@@ -106,7 +106,7 @@ input:focus {
 }
 #stp:hover {
     transition: 0.3s;
-    background-color: #222;
+    background-color: rgb(236, 0, 0);
     color: white;
 }
 #title {
@@ -115,6 +115,11 @@ input:focus {
     text-align: center;
 }
 @media only screen and (max-width: 768px) {
+    #player {
+        transform: rotate(90deg);
+        margin-left: -150px;
+        margin-top: 180px !important;
+    }
     .navMenu {
         z-index: 2;
         top: 120px;
