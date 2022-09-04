@@ -10,7 +10,7 @@ function Ifrm(msg) {
         document.body.appendChild(ifrm);
         document.getElementById("menu").style.display = "none";
 }
-document.getElementById("btn").onclick = function() {
+document.getElementById("btn").onclick = async function() {
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
         window.alert("Please Rotate your device.")
@@ -28,25 +28,24 @@ document.getElementById("btn").onclick = function() {
             const options = {
                 method: 'GET',
                 headers: {
-                    'X-RapidAPI-Key': 'f96c60ec5emsh4b6451611214d81p14212fjsn9c2839c99d87',
+                    'X-RapidAPI-Key': '4ffb9786abmsh437351fac8c9f9ap18645djsn6d8ce573f426',
                     'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
                 }
             };
-            fetch('https://imdb8.p.rapidapi.com/title/find?q=' + msg, options)
-            .then(response => response.json())
-            .then(response => document.getElementById("title").innerHTML = response["results"][0]["title"])
-            .catch(err => console.error(err));
-            fetch('https://imdb8.p.rapidapi.com/title/find?q=' + msg, options)
-            .then(response => response.json())
-            .then(response => document.title = document.title.replace("VENOX Movies", response["results"][0]["title"] + " | VENOX MOVIES"))
-            .catch(err => console.error(err));
+            async function get_data(){
+                let response = await fetch('https://imdb8.p.rapidapi.com/title/find?q=' + msg, options);
+                let data = await response.json();
+                data = JSON.stringify(data);
+                data = JSON.parse(data);
+                return data;
+            }
+            let ile = await get_data();
+            Ifrm(msg=ile["results"][0]["id"].slice(7, 17).replace("/", ""))
+            document.title = document.title.replace("VENOX Movies", ile["results"][0]["title"] + " | VENOX MOVIES")
+            document.getElementById("title").innerHTML = ile["results"][0]["title"]
             document.getElementById("navMenu").style.display = 'none'
             document.getElementById("movie").style.marginTop = '10px'
             document.getElementById("stp").style.display = 'inline-block'
-            fetch('https://imdb8.p.rapidapi.com/title/find?q=' + msg, options)
-            .then(response => response.json())
-            .then(response => Ifrm(msg=response["results"][0]["id"].slice(7, 17).replace("/", "")))
-            .catch(err => console.error(err));
     }
 };}
 document.getElementById("stp").onclick = function() {
