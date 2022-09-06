@@ -49,7 +49,20 @@ document.getElementById("btn").onclick = async function() {
             document.getElementById("title").innerHTML = ile["results"][0]["title"]
             document.getElementById("navMenu").style.display = 'none'
             document.getElementById("movie").style.marginTop = '10px'
-            document.getElementById("stp").style.display = 'inline-block'
+            document.getElementById("stp").style.display = 'block'
+            document.getElementById("next").style.display = 'inline-block'
+            document.getElementById("back").style.display = 'inline-block'
+            document.getElementById("btn").style.display = 'none'
+            document.getElementById("next").onclick = function() {
+                player = document.getElementById("player")
+                player.remove()
+                Ifrm(msg=ile["results"][0]["id"].slice(7, 17).replace("/", ""), seas=se, epis=parseInt(ep) + 1)
+            }
+            document.getElementById("back").onclick = function() {
+                player = document.getElementById("player")
+                player.remove()
+                Ifrm(msg=ile["results"][0]["id"].slice(7, 17).replace("/", ""), seas=se, epis=parseInt(ep) - 1)
+            }
     }
 };}
 document.getElementById("stp").onclick = function() {
