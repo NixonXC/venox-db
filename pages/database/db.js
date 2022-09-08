@@ -8,22 +8,26 @@ var menuList = document.getElementById("navMenu");
             menuList.style.maxHeight = "0px"
     }
 }
-document.getElementById("btn").onclick = function() {
+document.getElementById("btn").onclick = async function() {
+	id = document.getElementById("name");
+	msg = id.value;
 	const options = {
 		method: 'GET',
 		headers: {
-			'X-RapidAPI-Key': 'f96c60ec5emsh4b6451611214d81p14212fjsn9c2839c99d87',
+			'X-RapidAPI-Key': '4ffb9786abmsh437351fac8c9f9ap18645djsn6d8ce573f426',
 			'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
 		}
 	};
-	id = document.getElementById("name");
-	msg = id.value;
-	fetch('https://imdb8.p.rapidapi.com/title/find?q=' + msg, options)
-	.then(response => response.json())
-	.then(response => document.getElementById("result").innerHTML = response["results"][0]["id"].slice(7, 17))
-	.then(response => document.getElementById("result").innerHTML = response.replace("/", ""))
-	.then(document.getElementById("copy").style.display = "block")
-	.catch(err => console.error(err));
+	async function get_data(){
+		let response = await fetch('https://imdb8.p.rapidapi.com/title/find?q=' + msg, options);
+		let data = await response.json();
+		data = JSON.stringify(data);
+		data = JSON.parse(data);
+		return data;
+	}
+	let ile = await get_data();
+	document.getElementById("result").innerHTML = ile["results"][0]["id"].slice(7, 17.).replace("/", "")
+	document.getElementById("copy").style.display = "block"
 }
 function copyText(text) {
 	navigator.clipboard.writeText(text);

@@ -44,6 +44,7 @@ document.getElementById("btn").onclick = async function() {
                 return data;
             }
             let ile = await get_data();
+            let player = document.getElementById("player")
             Ifrm(msg=ile["results"][0]["id"].slice(7, 17).replace("/", ""), seas=se, epis=ep)
             document.title = document.title.replace("VENOX Series", ile["results"][0]["title"] + " | VENOX SERIES")
             document.getElementById("title").innerHTML = ile["results"][0]["title"]
@@ -54,12 +55,14 @@ document.getElementById("btn").onclick = async function() {
             document.getElementById("back").style.display = 'inline-block'
             document.getElementById("btn").style.display = 'none'
             document.getElementById("next").onclick = function() {
-                player = document.getElementById("player")
-                player.remove()
-                Ifrm(msg=ile["results"][0]["id"].slice(7, 17).replace("/", ""), seas=se, epis=parseInt(ep) + 1)
+                let player = document.getElementById("player")
+                se = sea.value;
+                ep = epi.value;
+                finep = parseInt(ep) + 1;
+                player.src = "https://vidsrc.me/embed/" + ile["results"][0]["id"].slice(7, 17).replace("/", "") + "/" + se + "-" + finep
             }
             document.getElementById("back").onclick = function() {
-                player = document.getElementById("player")
+                let player = document.getElementById("player")
                 player.remove()
                 Ifrm(msg=ile["results"][0]["id"].slice(7, 17).replace("/", ""), seas=se, epis=parseInt(ep) - 1)
             }

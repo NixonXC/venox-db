@@ -46,11 +46,11 @@ document.getElementById("btn").onclick = async function() {
             document.getElementById("navMenu").style.display = 'none'
             document.getElementById("movie").style.marginTop = '10px'
             document.getElementById("stp").style.display = 'inline-block'
+            document.getElementById("stp").onclick = function() {
+                window.location.reload()
+            }
     }
 };}
-document.getElementById("stp").onclick = function() {
-    window.location.reload()
-}
 var menuList = document.getElementById("navMenu");
     menuList.style.maxHeight = "0px";
     function togglemenu(){
