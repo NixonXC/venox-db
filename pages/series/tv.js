@@ -4,6 +4,7 @@ function Ifrm(msg, seas, epis) {
     ifrm.setAttribute("src", "https://vidsrc.me/embed/" + msg + "/" + seas + "-" + epis)
     ifrm.setAttribute("id", "player")
     ifrm.setAttribute("allowfullscreen", "true")
+    ifrm.setAttribute("Same-Site", "none")
     ifrm.style.width = "800px";
     ifrm.style.height = "500px";
     ifrm.style.marginTop = "20px";
@@ -44,7 +45,6 @@ document.getElementById("btn").onclick = async function() {
                 return data;
             }
             let ile = await get_data();
-            let player = document.getElementById("player")
             Ifrm(msg=ile["results"][0]["id"].slice(7, 17).replace("/", ""), seas=se, epis=ep)
             document.title = document.title.replace("VENOX Series", ile["results"][0]["title"] + " | VENOX SERIES")
             document.getElementById("title").innerHTML = ile["results"][0]["title"]
@@ -58,13 +58,17 @@ document.getElementById("btn").onclick = async function() {
                 let player = document.getElementById("player")
                 se = sea.value;
                 ep = epi.value;
-                finep = parseInt(ep) + 1;
+                document.getElementById("epi").value = parseInt(ep) + 1;
+                let finep = document.getElementById("epi").value;
                 player.src = "https://vidsrc.me/embed/" + ile["results"][0]["id"].slice(7, 17).replace("/", "") + "/" + se + "-" + finep
             }
             document.getElementById("back").onclick = function() {
                 let player = document.getElementById("player")
-                player.remove()
-                Ifrm(msg=ile["results"][0]["id"].slice(7, 17).replace("/", ""), seas=se, epis=parseInt(ep) - 1)
+                se = sea.value;
+                ep = epi.value;
+                document.getElementById("epi").value = parseInt(ep) - 1;
+                let finep = document.getElementById("epi").value;
+                player.src = "https://vidsrc.me/embed/" + ile["results"][0]["id"].slice(7, 17).replace("/", "") + "/" + se + "-" + finep
             }
     }
 };}
