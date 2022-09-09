@@ -1,5 +1,8 @@
 function Ifrm(msg) {
-    window.alert(msg)
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+        window.alert("Please Rotate your Device or Fullscreen., ID: "  + msg)
+    }
     var ifrm = document.createElement("iframe");
         ifrm.setAttribute("src", "https://vidsrc.me/embed/" + msg)
         ifrm.setAttribute("id", "player")
@@ -11,10 +14,6 @@ function Ifrm(msg) {
         document.getElementById("menu").style.display = "none";
 }
 document.getElementById("btn").onclick = async function() {
-    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-        window.alert("Please Rotate your device.")
-    }
     id = document.getElementById("mov");
     msg = id.value;
     if (msg == null, msg.length < 9, msg.length > 9, msg == "") {

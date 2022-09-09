@@ -1,7 +1,7 @@
 function Ifrm(msg, seas, epis) {
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
-        window.alert("Please Rotate your device., ID: "  + msg)
+        window.alert("Please Rotate your Device or Fullscreen., ID: "  + msg)
     }
     var ifrm = document.createElement("iframe");
     ifrm.setAttribute("src", "https://vidsrc.me/embed/" + msg + "/" + seas + "-" + epis)
