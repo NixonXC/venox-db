@@ -158,9 +158,9 @@ input:focus {
 }
 @media only screen and (max-width: 768px) {
     #player {
-        transform: rotate(90deg);
         margin-left: -150px;
-        margin-top: 180px !important;
+        width: 535px !important;
+        height: 400px !important;
     }
     .navMenu {
         z-index: 2;
