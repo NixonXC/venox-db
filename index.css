@@ -2,6 +2,7 @@
 body {
     text-align: center;
     background-color: #181d29;
+    overflow: hidden;
 }
 .main {
     text-align: center;
@@ -39,7 +40,7 @@ body {
 }
 .main {
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
     width: 280px;
     height: 300px;
     display: block;
@@ -47,8 +48,13 @@ body {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    animation: main 1.92s ease-out infinite;
     padding-top: 20px;
-    margin-top: 200px;
+}
+@keyframes main {
+    from {margin-top: 200px;}
+    50%  {margin-top: 175px;}
+    to {margin-top: 200px;}
 }
 .main h1 {
     font-size: 35px;
@@ -60,17 +66,21 @@ body {
 }
 .mov {
     display: block;
-    padding: 13px;
+    margin-top: 30px;
+    padding: 12.2px;
     border: none;
     width: 200px;
-    border-radius: 8px;
-    background-color: #d3d3d3e7;
+    border-radius: 5px;
+    background-color: #d6d6db;
     color: black;
     font-size: 19px;
     margin-left: auto;
     cursor: pointer;
-    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-family: 'Rubik', sans-serif;
     margin-right: auto;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 .mov:hover {
     transition: 0.3s;
@@ -79,30 +89,39 @@ body {
 }
 .gt {
     display: block;
-    padding: 13px;
+    padding: 12.2px;
     border: none;
     width: 200px;
-    border-radius: 8px;
-    background-color: #d3d3d3e7;
+    border-radius: 5px;
+    background-color: #d6d6db;
     color: black;
     font-size: 19px;
     margin-top: 15px;
     margin-left: auto;
     cursor: pointer;
-    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-family: 'Rubik', sans-serif;
     margin-right: auto;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 .gt:hover {
     transition: 0.2s;
     background-color: #222;
     color: white;
 }
+#particles-js {
+    margin-top: -200px;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -100;
+}
 @media only screen and (max-width: 768px) {
     .navMenu {
         z-index: 2;
         top: 120px;
         background-color: transparent;
-        border-radius: 8px;
         left: 78%;
         color: #000000;
     }

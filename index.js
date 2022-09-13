@@ -12,5 +12,5 @@ document.getElementById("mov").onclick = function() {
     window.location.href = "pages/movies/mov.html"
 }
 document.getElementById("gt").onclick = function() {
-    window.location.href = "pages/database/db.html"
+    window.location.href = "pages/series/tv.html"
 }
