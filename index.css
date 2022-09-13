@@ -44,17 +44,19 @@ body {
     width: 280px;
     height: 300px;
     display: block;
+    will-change: transform;
     background-color: #eee;
     text-align: center;
     margin-left: auto;
+    transition: transform 750ms;
+    animation: main 3.4s infinite;
     margin-right: auto;
-    animation: main 1.92s ease-out infinite;
     padding-top: 20px;
 }
 @keyframes main {
-    from {margin-top: 200px;}
-    50%  {margin-top: 175px;}
-    to {margin-top: 200px;}
+    from {transform: translateY(10px);}
+    50% {transform: translateY(-25px);}
+    to {transform: translateY(10px);}
 }
 .main h1 {
     font-size: 35px;
