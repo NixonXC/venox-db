@@ -143,11 +143,6 @@ input:focus {
     text-align: center;
 }
 @media only screen and (max-width: 768px) {
-    #player {
-        margin-left: -150px;
-        width: 535px !important;
-        height: 400px !important;
-    }
     .navMenu {
         z-index: 2;
         top: 120px;

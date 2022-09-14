@@ -20,8 +20,9 @@ function new_list(mov_title, embed_url, poster) {
         document.getElementById("stp").onclick = function() {
             window.location.reload()
         }
-        list = document.getElementById("new_list")
-        list.style.display = "none"
+        document.getElementById("new_list").style.display = "none"
+        document.getElementById("sug").style.display = "none"
+        document.getElementById("mov").value = mov_title
     }
 }
 window.onload = async function start() {
@@ -43,7 +44,6 @@ window.onload = async function start() {
     let data = await get_info();
     let thedb = data["result"][obj]["imdb_id"]
     let post = await get_post(id=thedb);
-    console.log(post)
     new_list(mov_title = data["result"][obj]["title"].replace(/[0-9]/g, ''), embed_url=data["result"][obj]["embed_url"], poster = post["data"]["movies"]["0"]["urlPoster"])
 }
 function new_ifrm(embed_url) {
@@ -107,7 +107,8 @@ document.getElementById("btn").onclick = async function() {
             document.getElementById("stp").onclick = function() {
                 window.location.reload()
             }
-    }
+            document.getElementById("new").style.display = "none"
+        }
 };}
 var menuList = document.getElementById("navMenu");
     menuList.style.maxHeight = "0px";
