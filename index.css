@@ -33,7 +33,7 @@ body {
     transition: all 0.2s ease-in-out;
 }
 .navMenu a:hover {
-    color: rgb(134, 236, 0);
+    color: rgba(0, 255, 34, 0.842);
 }
 .menu-logo {
     display: none;
@@ -55,7 +55,7 @@ body {
 }
 @keyframes main {
     from {transform: translateY(10px);}
-    50% {transform: translateY(-25px);}
+    50% {transform: translateY(-15px);}
     to {transform: translateY(10px);}
 }
 .main h1 {

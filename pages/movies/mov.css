@@ -104,6 +104,34 @@ input:focus {
     cursor: pointer;
     border-radius: 3px;
 }
+#text {
+    text-align: center;
+    color: white;
+}
+#new {
+    text-align: center;
+    margin-top: 40px;
+}
+#new_list {
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: auto;
+    height: 275px;
+    width: 165px;
+    border: solid 2px rgb(0, 183, 255);
+    margin-right: auto;
+    background-color: rgb(43, 43, 48);
+    padding: 10px;
+    border-radius: 8px;
+}
+#new_list img {
+    display: block;
+    border: solid 1px rgb(47, 143, 180);
+    width: 135px;
+    border-radius: 12px;
+    margin-left: auto;
+    margin-right: auto;
+}
 #stp:hover {
     transition: 0.3s;
     background-color: rgb(236, 0, 0);
