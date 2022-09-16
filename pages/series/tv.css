@@ -2,7 +2,7 @@
 body {
     font-family: 'Rubik', sans-serif;
     color: rgb(255, 255, 255);
-    background-color: #161316;
+    background-color: #141114;
 }
 button {
     cursor: pointer;
@@ -58,12 +58,12 @@ label {
 input{
     height: 27px;
     flex: 0 0 200px;
-    background: #141114e5;
-    border-radius: 4px;
+    background-color: #161316;
+    border-radius: 3px;
     width: 95px;
     text-align: center;
     font-size: 18px;
-    border: 3px solid #141114;;
+    border: 1px solid transparent;
     -webkit-transition: 0.5s;
     padding: 2px;
     margin-right: 5px;
@@ -76,14 +76,14 @@ input{
     width: 150px;
 }
 input:focus {
-    box-shadow: 1px 1px 10px #1bafe9;
+    box-shadow: 1px 1px 8.6px #1bafe9;
 }
 ::placeholder {
-    background: #141114;
-    color: rgb(255, 255, 255);
+    background: #161316;
+    color: #9f9ba5;
     opacity: 1;
     font-family: 'Rubik', sans-serif;
-    font-weight: 900;
+    font-weight: 200;
 }
 #btn {
     padding: 8px;

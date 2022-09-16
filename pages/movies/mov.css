@@ -2,7 +2,7 @@
 body {
     font-family: 'Rubik', sans-serif;
     color: rgb(255, 255, 255);
-    background-color: #161316;
+    background-color: #141114;
 }
 button {
     cursor: pointer;
@@ -48,30 +48,32 @@ label {
     margin-bottom: 15px;
     font-size: 18px;
 }
-input {
+input{
     height: 27px;
     flex: 0 0 200px;
-    border-radius: 4px;
-    width: 250px;
+    background-color: #161316;
+    border-radius: 3px;
+    width: 220px;
+    text-align: center;
     font-size: 18px;
-    background: #141114e5;
-    border: 3px solid #141114;;
+    border: 1px solid transparent;
     -webkit-transition: 0.5s;
-    transition: 0.5s;
-    color: white;
     padding: 2px;
     margin-right: 5px;
     margin-top: 7px;
+    transition: 0.5s;
     outline: none;
+    color: white;
 }
 input:focus {
-    box-shadow: 1px 1px 10px #1bafe9;
+    box-shadow: 1px 1px 8.6px #1bafe9;
 }
 ::placeholder {
-    color: rgb(255, 255, 255);
+    background: #161316;
+    color: #9f9ba5;
     opacity: 1;
     font-family: 'Rubik', sans-serif;
-    font-weight: 900;
+    font-weight: 200;
 }
 #player {
     display: block;
@@ -124,7 +126,7 @@ input:focus {
     width: 165px;
     border: solid 2px rgb(0, 183, 255);
     margin-right: auto;
-    background-color: rgb(43, 43, 48);
+    background-color: rgb(31, 30, 30);
     padding: 10px;
     border-radius: 8px;
 }
