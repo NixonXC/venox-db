@@ -230,10 +230,12 @@ button {
         font-family: 'Rubik', sans-serif;
         margin-bottom: 15px;
         font-size: 18px;
+        color: white;
     }
     input {
         border: 1px solid transparent !important;
         background: #1a161a !important;
+        color: white;
     }
     .navMenu a {
         font-size: 20px;
