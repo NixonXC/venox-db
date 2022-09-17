@@ -84,3 +84,32 @@ var menuList = document.getElementById("navMenu");
             menuList.style.maxHeight = "0px"
     }
 }
+function myFunction() {
+    var checkBox = document.getElementById("darkmode-toggle");
+    if (checkBox.checked == true){
+        document.body.style.backgroundColor = "#141114"
+        document.body.style.backgroundImage = "none"
+        document.body.style.color = "white"
+        document.getElementById("home").style.color = "white"
+        document.getElementById("mov2").style.color = "white"
+        document.getElementById("se2").style.color = "white"
+        document.getElementById("name").style.backgroundColor = "#1a161a"
+        document.getElementById("name").style.border = "1px solid transparent;"
+        document.getElementById("sea").style.backgroundColor = "#1a161a"
+        document.getElementById("sea").style.border = "1px solid transparent;"
+        document.getElementById("epi").style.backgroundColor = "#1a161a"
+        document.getElementById("epi").style.border = "1px solid transparent;"
+        document.getElementById("menu").style.filter = "invert(100%) sepia(0%) saturate(0%) hue-rotate(13deg) brightness(102%) contrast(102%)"
+    } else {
+        document.body.style.backgroundImage = "url(assets/bg.png)"
+        document.body.style.color = "black"
+        document.body.style.backgroundColor = "none"
+        document.getElementById("home").style.color = "black"
+        document.getElementById("mov2").style.color = "black"
+        document.getElementById("se2").style.color = "black"
+        document.getElementById("menu").style.filter = ""
+        document.getElementById("name").style.backgroundColor = "#ffff"
+        document.getElementById("sea").style.backgroundColor = "#ffff"
+        document.getElementById("epi").style.backgroundColor = "#ffff"
+    }
+  }

@@ -14,14 +14,16 @@
 <body>
     <div>
 		<nav class="navMenu" id="navMenu">
-      	<a href="https://venoxdb.tk/">HOME</a>
-      	<a href="https://venoxdb.tk/pages/movies/mov.html">MOVIES</a>
-      	<a href="tv.html">SERIES</a>
+      	<a id="home" href="https://venoxdb.tk/">HOME</a>
+      	<a id="mov2" href="https://venoxdb.tk/pages/movies/mov.html">MOVIES</a>
+      	<a id="se2" href="tv.html">SERIES</a>
+        <input type="checkbox" id="darkmode-toggle" onclick="myFunction()">
+        <label class="dark" for="darkmode-toggle"></label>
         </nav>
-        <img src="assets/res.png" class="menu-logo" id="menu" onclick="togglemenu()">
+        <img src="assets/menu.svg" class="menu-logo" id="menu" onclick="togglemenu()">
     </div>
     <div class="movie" id="movie">
-        <h1>VENOX SERIES</h1> 
+        <h1>VENOX SERIES</h1>
         <button id="back">Back</button>
         <label>
             <input id="name" type="text" placeholder="SERIES NAME">

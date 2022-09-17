@@ -51,7 +51,7 @@ label {
 input{
     height: 27px;
     flex: 0 0 200px;
-    background-color: #161316;
+    background-color: #1a161a;
     border-radius: 3px;
     width: 220px;
     text-align: center;
@@ -69,7 +69,7 @@ input:focus {
     box-shadow: 1px 1px 8.6px #1bafe9;
 }
 ::placeholder {
-    background: #161316;
+    background: #1a161a;
     color: #9f9ba5;
     opacity: 1;
     font-family: 'Rubik', sans-serif;
