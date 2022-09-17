@@ -227,7 +227,7 @@ button {
         font-family: 'Rubik', sans-serif;
         font-weight: 100;
     }
-    label {
+    .movie label {
         width: 200px;
         margin-right: auto;
         margin-left: auto;
@@ -238,7 +238,7 @@ button {
         font-size: 18px;
         color: rgb(255, 255, 255);
     }
-    input {
+    .movie input {
         border: 1px solid transparent !important;
         background: #1a161a !important;
         color: rgb(255, 255, 255);
