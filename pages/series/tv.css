@@ -221,6 +221,12 @@ button {
         left: 78%;
         color: #ffffff;
     }
+    ::placeholder {
+        opacity: 1;
+        color: rgba(255, 255, 255, 0.74);
+        font-family: 'Rubik', sans-serif;
+        font-weight: 100;
+    }
     label {
         width: 200px;
         margin-right: auto;
@@ -230,17 +236,17 @@ button {
         font-family: 'Rubik', sans-serif;
         margin-bottom: 15px;
         font-size: 18px;
-        color: white;
+        color: rgb(255, 255, 255);
     }
     input {
         border: 1px solid transparent !important;
         background: #1a161a !important;
-        color: white;
+        color: rgb(255, 255, 255);
     }
     .navMenu a {
         font-size: 20px;
         padding: 11px;
-        color: white;
+        color: rgb(255, 255, 255);
         width: 100px;
     }
     .menu-logo{
