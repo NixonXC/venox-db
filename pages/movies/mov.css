@@ -33,7 +33,7 @@ button {
     transition: all 0.2s ease-in-out;
 }
 .navMenu a:hover {
-    color: rgb(0, 122, 236);
+    color: rgb(0, 122, 236) !important;
 }
 .menu-logo {
     display: none;
