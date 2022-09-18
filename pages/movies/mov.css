@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 body {
     font-family: 'Rubik', sans-serif;
-    color: rgb(255, 255, 255);
-    background-color: #141114;
+    color: rgb(0, 0, 0);
+    background-image: url(assets/bg.png);
 }
 button {
     cursor: pointer;
@@ -20,7 +20,7 @@ button {
     transform: translate(-50%, -50%);
 }
 .navMenu a {
-    color: #ffffff;
+    color: #000000;
     text-decoration: none;
     font-size: 1.5em;
     font-family: 'Rubik', sans-serif;
@@ -38,7 +38,48 @@ button {
 .menu-logo {
     display: none;
 }
-label {
+.dark {
+    width: 76px;
+    height: 36px;
+    top: 10px;
+    display: inline-block;
+    position: relative;
+    background-color: #ebebeb;
+    border-radius: 55px;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.dark::after {
+    content: "";
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    border-radius: 50px;
+    transition: 0.3s;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+#darkmode-toggle {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+#darkmode-toggle:checked + .dark {
+    background: linear-gradient(160deg, #131a49, #242b57);
+    box-shadow: inset 0px 5px 15px #0f1a5fb7;
+}
+#darkmode-toggle:checked + .dark::after {
+    left: 70px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, rgb(119, 118, 118), #3a3a3a);
+}
+.dark:active::after{
+    width: 40px;
+}
+.movie label {
     width: 75px;
     margin-right: auto;
     margin-left: auto;
@@ -48,32 +89,31 @@ label {
     margin-bottom: 15px;
     font-size: 18px;
 }
-input{
+.movie input{
     height: 27px;
     flex: 0 0 200px;
-    background-color: #1a161a;
+    background-color: #ffffff;
     border-radius: 3px;
     width: 220px;
     text-align: center;
+    border: 2px solid #1a161a;
     font-size: 18px;
-    border: 1px solid transparent;
     -webkit-transition: 0.5s;
     padding: 2px;
     margin-right: 5px;
     margin-top: 7px;
     transition: 0.5s;
     outline: none;
-    color: white;
+    color: rgb(0, 0, 0);
 }
-input:focus {
+.movie input:focus {
     box-shadow: 1px 1px 8.6px #1bafe9;
 }
 ::placeholder {
-    background: #1a161a;
     color: #9f9ba5;
     opacity: 1;
     font-family: 'Rubik', sans-serif;
-    font-weight: 200;
+    font-weight: 900;
 }
 #player {
     display: block;
@@ -149,15 +189,26 @@ input:focus {
     text-align: center;
 }
 @media only screen and (max-width: 768px) {
+    body {
+        background-color: #141114 !important;
+        background-image: none !important;
+        color: white !important;
+    }
     .navMenu {
         z-index: 2;
         top: 120px;
         background-color: transparent;
         border-radius: 8px;
         left: 78%;
-        color: #000000;
+        color: #ffffff !important;
     }
-    label {
+    ::placeholder {
+        opacity: 1;
+        color: rgba(255, 255, 255, 0.74);
+        font-family: 'Rubik', sans-serif;
+        font-weight: 100;
+    }
+    .movie label {
         width: 200px;
         margin-right: auto;
         margin-left: auto;
@@ -166,27 +217,25 @@ input:focus {
         font-family: 'Rubik', sans-serif;
         margin-bottom: 15px;
         font-size: 18px;
+        color: rgb(255, 255, 255);
     }
-    input {
-        height: 35px;
-        flex: 0 0 200px;
-        border-radius: 4px;
-        width: 200px;
-        font-size: 18px;
-        -webkit-transition: 0.5s;
-        transition: 0.5s;
-        outline: none;
+    .movie input {
+        border: 1px solid transparent !important;
+        background: #1a161a !important;
+        color: rgb(255, 255, 255);
     }
     .navMenu a {
         font-size: 20px;
         padding: 11px;
+        color: rgb(255, 255, 255) !important;
         width: 100px;
     }
     .menu-logo{
         display: block;
         margin-right: 20px;
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(13deg) brightness(102%) contrast(102%);
         margin-left: auto;
-        width: 37px;
+        width: 50px;
         margin-top: 20px;
     }
     .navMenu a {

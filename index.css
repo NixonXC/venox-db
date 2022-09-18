@@ -1,16 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 body {
     text-align: center;
-    background-color: #161316;
     overflow: hidden;
+    color: #000000;
+    background-image: url(assets/bg.png);
 }
 .main {
     text-align: center;
     margin-top: 200px;
-    color: #ffffff;
+    color: #000000;
     font-family: 'Rubik', sans-serif;
     font-weight: 100;
     font-size: 30px;
+}
+.dark {
+    width: 76px;
+    height: 36px;
+    top: 10px;
+    display: inline-block;
+    position: relative;
+    background-color: #ebebeb;
+    border-radius: 55px;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.dark::after {
+    content: "";
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    border-radius: 50px;
+    transition: 0.3s;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+#darkmode-toggle {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+#darkmode-toggle:checked + .dark {
+    background: linear-gradient(160deg, #131a49, #242b57);
+    box-shadow: inset 0px 5px 15px #0f1a5fb7;
+}
+#darkmode-toggle:checked + .dark::after {
+    left: 70px;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, rgb(119, 118, 118), #3a3a3a);
+}
+.dark:active::after{
+    width: 40px;
 }
 .navMenu {
     position: absolute;
@@ -20,7 +62,7 @@ body {
     transform: translate(-50%, -50%);
 }
 .navMenu a {
-    color: #ffffff;
+    color: #000000;
     text-decoration: none;
     font-size: 1.5em;
     font-family: 'Rubik', sans-serif;
@@ -120,23 +162,37 @@ body {
     z-index: -100;
 }
 @media only screen and (max-width: 768px) {
+    body {
+        background-color: #141114 !important;
+        background-image: none !important;
+        color: white !important;
+    }
     .navMenu {
         z-index: 2;
         top: 120px;
         background-color: transparent;
+        border-radius: 8px;
         left: 78%;
-        color: #000000;
+        color: #ffffff;
+    }
+    ::placeholder {
+        opacity: 1;
+        color: rgba(255, 255, 255, 0.74);
+        font-family: 'Rubik', sans-serif;
+        font-weight: 100;
     }
     .navMenu a {
         font-size: 20px;
         padding: 11px;
+        color: rgb(255, 255, 255) !important;
         width: 100px;
     }
     .menu-logo{
         display: block;
         margin-right: 20px;
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(13deg) brightness(102%) contrast(102%);
         margin-left: auto;
-        width: 37px;
+        width: 50px;
         margin-top: 20px;
     }
     .navMenu a {
