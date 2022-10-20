@@ -1,10 +1,13 @@
-function Ifrm(msg, seas, epis) {
+/* This Project is made for Educational Purposes only
+Last Updated: 2022 October */
+
+function Ifrm(msg, seas, epis) { /* This function is used to create the Iframe player */
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
-        window.alert("Please Rotate your Device or Fullscreen., ID: "  + msg)
+        window.alert("Please Rotate your Device or Fullscreen., ID: "  + msg + ", Ad Blocker Recommended for an ad free experience.")
     }
     var ifrm = document.createElement("iframe");
-    ifrm.setAttribute("src", "https://vidsrc.me/embed/" + msg + "/" + seas + "-" + epis)
+    ifrm.setAttribute("src", "https://2embed.org/embed/series?imdb=" + msg + "&s=" + seas + "&e=" + epis)
     ifrm.setAttribute("id", "player")
     ifrm.setAttribute("allowfullscreen", "true")
     ifrm.setAttribute("Same-Site", "none")
@@ -14,7 +17,7 @@ function Ifrm(msg, seas, epis) {
     document.body.appendChild(ifrm);
     document.getElementById("menu").style.display = "none";
 }
-document.getElementById("btn").onclick = async function() {
+document.getElementById("btn").onclick = async function() { /* This function is used to check if the user has clicked the watch button or not. */
     id = document.getElementById("name");
     epi = document.getElementById("epi");
     sea = document.getElementById("sea");
@@ -59,7 +62,7 @@ document.getElementById("btn").onclick = async function() {
                 ep = epi.value;
                 document.getElementById("epi").value = parseInt(ep) + 1;
                 let finep = document.getElementById("epi").value;
-                player.src = "https://vidsrc.me/embed/" + ile["results"][0]["id"].slice(7, 17).replace("/", "") + "/" + se + "-" + finep
+                player.src = "https://2embed.org/embed/series?imdb=" + ile["results"][0]["id"].slice(7, 17).replace("/", "") + "&s=" + se + "&e=" + finep
             }
             document.getElementById("back").onclick = function() {
                 let player = document.getElementById("player")
@@ -67,14 +70,14 @@ document.getElementById("btn").onclick = async function() {
                 ep = epi.value;
                 document.getElementById("epi").value = parseInt(ep) - 1;
                 let finep = document.getElementById("epi").value;
-                player.src = "https://vidsrc.me/embed/" + ile["results"][0]["id"].slice(7, 17).replace("/", "") + "/" + se + "-" + finep
+                player.src = "https://2embed.org/embed/series?imdb=" + ile["results"][0]["id"].slice(7, 17).replace("/", "") + "&s=" + se + "&e=" + finep
             }
     }
 };}
 document.getElementById("stp").onclick = function() {
     window.location.reload()
 }
-var menuList = document.getElementById("navMenu");
+var menuList = document.getElementById("navMenu"); /* Navbar for Responsive css */
     menuList.style.maxHeight = "0px";
     function togglemenu(){
         if (menuList.style.maxHeight == "0px") {
@@ -83,81 +86,4 @@ var menuList = document.getElementById("navMenu");
         else {
             menuList.style.maxHeight = "0px"
     }
-}
-document.getElementById("darkmode-toggle").onclick = function() {
-    var checkbox = document.getElementById("darkmode-toggle");
-    localStorage.setItem("val", checkbox.checked);
-    var checked = JSON.parse(localStorage.getItem("val"));
-    if (checked == true){
-        document.body.style.backgroundColor = "#141114"
-        document.body.style.backgroundImage = "none"
-        document.body.style.color = "white"
-        document.getElementById("home").style.color = "white"
-        document.getElementById("mov2").style.color = "white"
-        document.getElementById("se2").style.color = "white"
-        let name = document.getElementById("name")
-        name.style.backgroundColor = "#1a161a"
-        name.style.border = "1px solid transparent;"
-        name.style.color = "#ffff"
-        let sea = document.getElementById("sea")
-        sea.style.backgroundColor = "#1a161a"
-        sea.style.border = "1px solid transparent;"
-        sea.style.color = "#ffff"
-        let epi = document.getElementById("epi")
-        epi.style.backgroundColor = "#1a161a"
-        epi.style.border = "1px solid transparent;"
-        epi.style.color = "#ffff"
-        let menu = document.getElementById("menu")
-        menu.style.filter = "invert(100%) sepia(0%) saturate(0%) hue-rotate(13deg) brightness(102%) contrast(102%)"
-    } 
-    else {
-        document.body.style.backgroundImage = "url(assets/bg.png)"
-        document.body.style.color = "black"
-        document.body.style.backgroundColor = "none"
-        document.getElementById("home").style.color = "black"
-        document.getElementById("mov2").style.color = "black"
-        document.getElementById("se2").style.color = "black"
-        document.getElementById("menu").style.filter = ""
-        document.getElementById("name").style.backgroundColor = "#ffff"
-        document.getElementById("sea").style.backgroundColor = "#ffff"
-        document.getElementById("epi").style.backgroundColor = "#ffff"
-    }
-}
-var checkbox = document.getElementById("darkmode-toggle");
-checked = JSON.parse(localStorage.getItem("val"));
-console.log(checked)
-checkbox.checked = checked
-if (checked == true) {
-    document.body.style.backgroundColor = "#141114"
-    document.body.style.backgroundImage = "none"
-    document.body.style.color = "white"
-    document.getElementById("home").style.color = "white"
-    document.getElementById("mov2").style.color = "white"
-    document.getElementById("se2").style.color = "white"
-    let name = document.getElementById("name")
-    name.style.backgroundColor = "#1a161a"
-    name.style.border = "1px solid transparent;"
-    name.style.color = "#ffff"
-    let sea = document.getElementById("sea")
-    sea.style.backgroundColor = "#1a161a"
-    sea.style.border = "1px solid transparent;"
-    sea.style.color = "#ffff"
-    let epi = document.getElementById("epi")
-    epi.style.backgroundColor = "#1a161a"
-    epi.style.border = "1px solid transparent;"
-    epi.style.color = "#ffff"
-    let menu = document.getElementById("menu")
-    menu.style.filter = "invert(100%) sepia(0%) saturate(0%) hue-rotate(13deg) brightness(102%) contrast(102%)"
-}
-else {
-    document.body.style.backgroundImage = "url(assets/bg.png)"
-    document.body.style.color = "black"
-    document.body.style.backgroundColor = "none"
-    document.getElementById("home").style.color = "black"
-    document.getElementById("mov2").style.color = "black"
-    document.getElementById("se2").style.color = "black"
-    document.getElementById("menu").style.filter = ""
-    document.getElementById("name").style.backgroundColor = "#ffff"
-    document.getElementById("sea").style.backgroundColor = "#ffff"
-    document.getElementById("epi").style.backgroundColor = "#ffff"
 }
