@@ -1,12 +1,12 @@
 /* This Project is made for Educational Purposes only
 Last Updated: 2022 September */
 
-function Ifrm(msg, seas, epis) { /* This function is used to create the Iframe player */
+function Ifrm(msg, seas, epis, title, plot, date, genres) { /* This function is used to create the Iframe player */
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
         window.alert("Please Rotate your Device or Fullscreen., ID: "  + msg)
     }
-    var ifrm = document.createElement("iframe");
+    var ifrm = document.createElement("iframe")
     ifrm.setAttribute("src", "https://vidsrc.me/embed/" + msg + "/" + seas + "-" + epis)
     ifrm.setAttribute("id", "player")
     ifrm.setAttribute("allowfullscreen", "true")
@@ -14,8 +14,26 @@ function Ifrm(msg, seas, epis) { /* This function is used to create the Iframe p
     ifrm.style.width = "800px";
     ifrm.style.height = "500px";
     ifrm.style.marginTop = "20px";
-    document.body.appendChild(ifrm);
-    document.getElementById("menu").style.display = "none";
+    play = document.getElementById("play")
+    play.appendChild(ifrm)
+    let il = document.createElement("h1");
+    il.setAttribute("id", "title")
+    il.innerHTML = title
+    play.appendChild(il)
+    play.insertBefore(ifrm, play.firstChild)
+    let ep = document.createElement("p")
+    ep.innerHTML = "<b>Episode:</b> " + epis + "," + " <b>Season:</b> " + se
+    play.appendChild(ep)
+    let p = document.createElement("p")
+    p.innerHTML = plot
+    p.style.width = "800px"
+    play.appendChild(p)
+    let year = document.createElement("p")
+    year.innerHTML = "<b>Release Year:</b> " + date
+    play.appendChild(year)
+    let cat = document.createElement("p")
+    cat.innerHTML = "<b>Genres:</b> " + genres
+    play.appendChild(cat)
 }
 document.getElementById("btn").onclick = async function() { /* This function is used to check if the user has clicked the watch button or not. */
     id = document.getElementById("name");
@@ -46,16 +64,23 @@ document.getElementById("btn").onclick = async function() { /* This function is 
                 data = JSON.parse(data);
                 return data;
             }
+            async function get_post(id){
+                let response = await fetch('https://www.myapifilms.com/imdb/idIMDB?idIMDB=' + id + '&token=c236aee8-d43d-4646-bc9f-edac76062307');
+                let data = await response.json();
+                data = JSON.stringify(data);
+                data = JSON.parse(data);
+                return data;
+            }
             let ile = await get_data();
-            Ifrm(msg=ile["results"][0]["id"].slice(7, 17).replace("/", ""), seas=se, epis=ep)
+            let dat = await get_post(id=ile["results"][0]["id"].slice(7, 17).replace("/", ""))
+            console.log(dat)
+            Ifrm(msg=ile["results"][0]["id"].slice(7, 17).replace("/", ""), seas=se, epis=ep, title=ile["results"][0]["title"], plot=dat["data"]["movies"][0]["plot"], date=dat["data"]["movies"][0]["releaseDate"].slice(0, 4), genres=dat["data"]["movies"][0]["genres"])
             document.title = document.title.replace("VENOX Series", ile["results"][0]["title"] + " | VENOX SERIES")
-            document.getElementById("title").innerHTML = ile["results"][0]["title"]
-            document.getElementById("navMenu").style.display = 'none'
             document.getElementById("movie").style.marginTop = '10px'
-            document.getElementById("stp").style.display = 'block'
             document.getElementById("next").style.display = 'inline-block'
             document.getElementById("back").style.display = 'inline-block'
             document.getElementById("btn").style.display = 'none'
+            document.getElementById("movie").style.display = 'none'
             document.getElementById("next").onclick = function() {
                 let player = document.getElementById("player")
                 se = sea.value;
@@ -74,9 +99,6 @@ document.getElementById("btn").onclick = async function() { /* This function is 
             }
     }
 };}
-document.getElementById("stp").onclick = function() {
-    window.location.reload()
-}
 var menuList = document.getElementById("navMenu"); /* Navbar for Responsive css */
     menuList.style.maxHeight = "0px";
     function togglemenu(){

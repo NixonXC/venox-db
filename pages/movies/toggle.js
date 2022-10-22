@@ -15,12 +15,12 @@ document.getElementById("darkmode-toggle").onclick = function() {
         mov.style.border = "1px solid transparent;"
         mov.style.color = "#ffff"
     } else {
-        document.body.style.backgroundImage = "url(assets/bg.png)"
-        document.body.style.color = "black"
+        document.body.style.backgroundImage = "linear-gradient(rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), url(assets/bg.jpg)"
+        document.body.style.color = "white"
         document.body.style.backgroundColor = "none"
-        document.getElementById("home").style.color = "black"
-        document.getElementById("mov2").style.color = "black"
-        document.getElementById("se2").style.color = "black"
+        document.getElementById("home").style.color = "white"
+        document.getElementById("mov2").style.color = "white"
+        document.getElementById("se2").style.color = "white"
         document.getElementById("menu").style.filter = ""
         let mov = document.getElementById("mov")
         mov.style.backgroundColor = "#ffff"
@@ -45,12 +45,12 @@ if (checked == true) {
         mov.style.color = "#ffff"
 }
 else {
-    document.body.style.backgroundImage = "url(assets/bg.png)"
-    document.body.style.color = "black"
+    document.body.style.backgroundImage = "linear-gradient(rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), url(assets/bg.jpg)"
+    document.body.style.color = "white"
     document.body.style.backgroundColor = "none"
-    document.getElementById("home").style.color = "black"
-    document.getElementById("mov2").style.color = "black"
-    document.getElementById("se2").style.color = "black"
+    document.getElementById("home").style.color = "white"
+    document.getElementById("mov2").style.color = "white"
+    document.getElementById("se2").style.color = "white"
     document.getElementById("menu").style.filter = ""
     let mov = document.getElementById("mov")
     mov.style.backgroundColor = "#ffff"
