@@ -1,13 +1,13 @@
 /* This Project is made for Educational Purposes only
-Last Updated: 2022 October */
+Last Updated: 2022 September */
 
 function Ifrm(msg, seas, epis) { /* This function is used to create the Iframe player */
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
-        window.alert("Please Rotate your Device or Fullscreen., ID: "  + msg + ", Ad Blocker Recommended for an ad free experience.")
+        window.alert("Please Rotate your Device or Fullscreen., ID: "  + msg)
     }
     var ifrm = document.createElement("iframe");
-    ifrm.setAttribute("src", "https://2embed.org/embed/series?imdb=" + msg + "&s=" + seas + "&e=" + epis)
+    ifrm.setAttribute("src", "https://vidsrc.me/embed/" + msg + "/" + seas + "-" + epis)
     ifrm.setAttribute("id", "player")
     ifrm.setAttribute("allowfullscreen", "true")
     ifrm.setAttribute("Same-Site", "none")
@@ -62,7 +62,7 @@ document.getElementById("btn").onclick = async function() { /* This function is 
                 ep = epi.value;
                 document.getElementById("epi").value = parseInt(ep) + 1;
                 let finep = document.getElementById("epi").value;
-                player.src = "https://2embed.org/embed/series?imdb=" + ile["results"][0]["id"].slice(7, 17).replace("/", "") + "&s=" + se + "&e=" + finep
+                player.src = "https://vidsrc.me/embed/" + ile["results"][0]["id"].slice(7, 17).replace("/", "") + "/" + se + "-" + finep
             }
             document.getElementById("back").onclick = function() {
                 let player = document.getElementById("player")
@@ -70,7 +70,7 @@ document.getElementById("btn").onclick = async function() { /* This function is 
                 ep = epi.value;
                 document.getElementById("epi").value = parseInt(ep) - 1;
                 let finep = document.getElementById("epi").value;
-                player.src = "https://2embed.org/embed/series?imdb=" + ile["results"][0]["id"].slice(7, 17).replace("/", "") + "&s=" + se + "&e=" + finep
+                player.src = "https://vidsrc.me/embed/" + ile["results"][0]["id"].slice(7, 17).replace("/", "") + "/" + se + "-" + finep
             }
     }
 };}
