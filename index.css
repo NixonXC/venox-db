@@ -1,14 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+html {
+    scroll-behavior: smooth
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #8a8a8a36;
+}
+::-webkit-scrollbar-thumb {
+    background: #0e0b0e;
+}
 body {
     text-align: center;
     overflow: hidden;
-    color: #000000;
-    background-image: url(assets/bg.png);
+    color: #ffffff;
+    background-color: #141114;
 }
 .main {
     text-align: center;
     margin-top: 200px;
-    color: #000000;
+    color: #ffffff;
     font-family: 'Rubik', sans-serif;
     font-weight: 100;
     font-size: 30px;
@@ -56,21 +68,21 @@ body {
 }
 .nav {
     background: linear-gradient(rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), #1a161a44 !important;
-    height: 95px;
+    height: 90px;
     margin-top: -10px;
     margin-left: -20px;
     margin-right: -8px;
 }
 .navMenu {
     position: absolute;
-    top: 3%;
+    top: 4%;
     right: -180px;
     background: linear-gradient(rgba(0,0,0, 0.1), rgba(0,0,0, 0.1)), #1a161a;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 .navMenu a {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-decoration: none;
     font-size: 1.5em;
     font-family: 'Rubik', sans-serif;
@@ -78,11 +90,12 @@ body {
     display: inline;
     gap: 20px;
     padding: 20px;
+    margin-right: 12px;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
 .navMenu a:hover {
-    color: rgb(0, 122, 236) !important;
+    color: rgb(255, 0, 0) !important;
 }
 .menu-logo {
     display: none;

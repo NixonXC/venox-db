@@ -1,8 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+html {
+    scroll-behavior: smooth
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #8a8a8a36;
+}
+::-webkit-scrollbar-thumb {
+    background: #0e0b0e;
+}
 body {
     font-family: 'Rubik', sans-serif;
-    color: rgb(0, 0, 0);
-    background: linear-gradient(rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), url(assets/bg.jpg);
+    color: rgb(255, 255, 255);
+    background-color: #141114;
 }
 button {
     cursor: pointer;
@@ -21,14 +33,14 @@ button {
 }
 .navMenu {
     position: absolute;
-    top: 3%;
+    top: 4%;
     right: -180px;
     background: linear-gradient(rgba(0,0,0, 0.1), rgba(0,0,0, 0.1)), #1a161a;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 .navMenu a {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-decoration: none;
     font-size: 1.5em;
     font-family: 'Rubik', sans-serif;
@@ -36,55 +48,15 @@ button {
     display: inline;
     gap: 20px;
     padding: 20px;
+    margin-right: 12px;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
 .navMenu a:hover {
-    color: rgb(0, 122, 236) !important;
+    color: rgb(255, 0, 0) !important;
 }
 .menu-logo {
     display: none;
-}
-.dark {
-    width: 76px;
-    height: 36px;
-    top: 10px;
-    display: inline-block;
-    position: relative;
-    background-color: #ebebeb;
-    border-radius: 55px;
-    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
-    cursor: pointer;
-    transition: 0.3s;
-}
-.dark::after {
-    content: "";
-    width: 28px;
-    height: 28px;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    background: linear-gradient(180deg, #ffcc89, #d8860b);
-    border-radius: 50px;
-    transition: 0.3s;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-}
-#darkmode-toggle {
-    width: 0;
-    height: 0;
-    visibility: hidden;
-}
-#darkmode-toggle:checked + .dark {
-    background: linear-gradient(160deg, #131a49, #242b57);
-    box-shadow: inset 0px 5px 15px #0f1a5fb7;
-}
-#darkmode-toggle:checked + .dark::after {
-    left: 70px;
-    transform: translateX(-100%);
-    background: linear-gradient(180deg, rgb(119, 118, 118), #3a3a3a);
-}
-.dark:active::after{
-    width: 40px;
 }
 .movie label {
     width: 75px;
@@ -109,7 +81,7 @@ button {
 .movie input{
     height: 27px;
     flex: 0 0 200px;
-    background-color: #ffffff;
+    background-color: #1a161a;
     border-radius: 3px;
     width: 95px;
     text-align: center;
@@ -121,7 +93,7 @@ button {
     margin-top: 7px;
     transition: 0.5s;
     outline: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 .movie input[type=number]::-webkit-inner-spin-button, 
 .movie input[type=number]::-webkit-outer-spin-button { 
