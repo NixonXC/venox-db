@@ -54,23 +54,30 @@ body {
 .dark:active::after{
     width: 40px;
 }
+.nav {
+    background: linear-gradient(rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), #1a161a44 !important;
+    height: 95px;
+    margin-top: -10px;
+    margin-left: -20px;
+    margin-right: -8px;
+}
 .navMenu {
     position: absolute;
     top: 3%;
-    left: 50%;
+    right: -180px;
+    background: linear-gradient(rgba(0,0,0, 0.1), rgba(0,0,0, 0.1)), #1a161a;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 .navMenu a {
-    color: #000000;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-size: 1.5em;
     font-family: 'Rubik', sans-serif;
     font-weight: 900;
     display: inline;
     gap: 20px;
-    padding: 13px;
-    width: 100px;
+    padding: 20px;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
@@ -161,6 +168,9 @@ body {
     position: fixed;
     z-index: -100;
 }
+.nav img{
+    margin-left: -93%;
+}
 @media only screen and (max-width: 768px) {
     body {
         background-color: #141114 !important;
@@ -172,7 +182,7 @@ body {
         top: 120px;
         background-color: transparent;
         border-radius: 8px;
-        left: 78%;
+        left: 88%;
         color: #ffffff;
     }
     ::placeholder {
@@ -191,9 +201,9 @@ body {
         display: block;
         margin-right: 20px;
         filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(13deg) brightness(102%) contrast(102%);
-        margin-left: auto;
-        width: 50px;
-        margin-top: 20px;
+        margin-left: auto !important;
+        width: 50px !important;
+        margin-top: -50px !important;
     }
     .navMenu a {
         float: none;
@@ -203,5 +213,8 @@ body {
     .navMenu {
         overflow: hidden;
         transition: 0.5s;
+    }
+    .nav img {
+        margin-left: -300px;
     }
 }

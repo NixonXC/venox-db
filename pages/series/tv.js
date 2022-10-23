@@ -1,7 +1,7 @@
 /* This Project is made for Educational Purposes only
 Last Updated: 2022 September */
 
-function Ifrm(msg, seas, epis, title, plot, date, genres) { /* This function is used to create the Iframe player */
+function Ifrm(msg, seas, epis, title, plot, date, genres, rating) { /* This function is used to create the Iframe player */
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
         window.alert("Please Rotate your Device or Fullscreen., ID: "  + msg)
@@ -34,6 +34,9 @@ function Ifrm(msg, seas, epis, title, plot, date, genres) { /* This function is 
     let cat = document.createElement("p")
     cat.innerHTML = "<b>Genres:</b> " + genres
     play.appendChild(cat)
+    let rat = document.createElement("p")
+    rat.innerHTML = "<b>Rating:</b> " + rating + "/10"
+    play.appendChild(rat)
 }
 document.getElementById("btn").onclick = async function() { /* This function is used to check if the user has clicked the watch button or not. */
     id = document.getElementById("name");
@@ -74,7 +77,7 @@ document.getElementById("btn").onclick = async function() { /* This function is 
             let ile = await get_data();
             let dat = await get_post(id=ile["results"][0]["id"].slice(7, 17).replace("/", ""))
             console.log(dat)
-            Ifrm(msg=ile["results"][0]["id"].slice(7, 17).replace("/", ""), seas=se, epis=ep, title=ile["results"][0]["title"], plot=dat["data"]["movies"][0]["plot"], date=dat["data"]["movies"][0]["releaseDate"].slice(0, 4), genres=dat["data"]["movies"][0]["genres"])
+            Ifrm(msg=ile["results"][0]["id"].slice(7, 17).replace("/", ""), seas=se, epis=ep, title=ile["results"][0]["title"], plot=dat["data"]["movies"][0]["plot"], date=dat["data"]["movies"][0]["releaseDate"].slice(0, 4), genres=dat["data"]["movies"][0]["genres"], rating = dat["data"]["movies"][0]["rating"])
             document.title = document.title.replace("VENOX Series", ile["results"][0]["title"] + " | VENOX SERIES")
             document.getElementById("movie").style.marginTop = '10px'
             document.getElementById("next").style.display = 'inline-block'

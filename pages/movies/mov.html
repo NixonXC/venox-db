@@ -12,16 +12,16 @@
     <link rel="stylesheet" href="mov.css">
 </head>
 <body>
-    <div>
+    <div class="nav">
+        <img id="logo" src="assets/logo.png" width="50px" style="margin-top: 20px; margin-left: 25px; border-radius: 4px; cursor: pointer;">
 		<nav class="navMenu" id="navMenu">
-        <img src="assets/logo.png">
       	<a id="home" href="https://venoxdb.tk/">HOME</a>
       	<a id="mov2" href="mov.html">MOVIES</a>
       	<a id="se2" href="https://venoxdb.tk/pages/series/tv.html">SERIES</a>
         <input type="checkbox" id="darkmode-toggle">
         <label class="dark" for="darkmode-toggle"></label>
         </nav>
-        <img src="assets/menu.svg" id="menu" class="menu-logo"onclick="togglemenu()">
+        <img src="assets/menu.svg" class="menu-logo" id="menu" onclick="togglemenu()">
     </div>
     <div class="movie" id="movie">
         <h1>VENOX MOVIES</h1>
@@ -33,6 +33,8 @@
     </div>
     <div id="new">
         <h2 id="sug">SUGGESTION</h2>
+    </div>
+    <div id="play">
     </div>
     <script src="mov.js"></script>
     <script src="toggle.js"></script>

@@ -7,28 +7,35 @@ body {
 button {
     cursor: pointer;
 }
+.nav {
+    background: linear-gradient(rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), #1a161a44 !important;
+    height: 95px;
+    margin-top: -10px;
+    margin-left: -20px;
+    margin-right: -8px;
+}
 .movie {
     text-align: center;
-    margin-top: 160px;
+    margin-top: 130px;
     font-size: 25px;
 }
 .navMenu {
     position: absolute;
     top: 3%;
-    left: 50%;
+    right: -180px;
+    background: linear-gradient(rgba(0,0,0, 0.1), rgba(0,0,0, 0.1)), #1a161a;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 .navMenu a {
-    color: #000000;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-size: 1.5em;
     font-family: 'Rubik', sans-serif;
     font-weight: 900;
     display: inline;
     gap: 20px;
-    padding: 13px;
-    width: 100px;
+    padding: 20px;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
@@ -115,13 +122,6 @@ button {
     font-family: 'Rubik', sans-serif;
     font-weight: 900;
 }
-#player {
-    display: block;
-    border-radius: 12px;
-    border: 3px solid rgb(0, 0, 0);
-    margin-left: auto;
-    margin-right: auto;
-}
 #btn {
     padding: 8px;
     font-size: 15px;
@@ -184,9 +184,22 @@ button {
     color: white;
 }
 #title {
-    margin-top: 20px;
+    margin-left: 50px;
     font-size: 23px;
-    text-align: center;
+    color: white;
+}
+#play p{
+    margin-left: 50px;
+}
+#play {
+    margin-top: 20px;
+}
+#player {
+    display: flex;
+    border-radius: 6px;
+    border: 4px solid black;
+    margin-left: 50px;
+    margin-right: auto;
 }
 @media only screen and (max-width: 768px) {
     body {
@@ -199,8 +212,8 @@ button {
         top: 120px;
         background-color: transparent;
         border-radius: 8px;
-        left: 78%;
-        color: #ffffff !important;
+        left: 86%;
+        color: #ffffff;
     }
     ::placeholder {
         opacity: 1;
@@ -234,9 +247,9 @@ button {
         display: block;
         margin-right: 20px;
         filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(13deg) brightness(102%) contrast(102%);
-        margin-left: auto;
-        width: 50px;
-        margin-top: 20px;
+        margin-left: auto !important;
+        width: 50px !important;
+        margin-top: -50px !important;
     }
     .navMenu a {
         float: none;
@@ -246,5 +259,20 @@ button {
     .navMenu {
         overflow: hidden;
         transition: 0.5s;
+    }
+    #player {
+        width: 350px !important;
+        height: 250px !important;
+        margin-left: auto;
+    }
+    #title {
+        margin-left: 10px;
+    }
+    #play {
+        margin-left: auto;
+    }
+    #play p {
+        width: 340px !important;
+        margin-left: 10px;
     }
 }

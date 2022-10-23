@@ -57,7 +57,7 @@ function new_ifrm(embed_url) {
     document.body.appendChild(ifrm);
     document.getElementById("menu").style.display = "none";
 }
-function Ifrm(msg) {
+function Ifrm(msg, title, plot, date, genres, rating) {
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
         window.alert("Please Rotate your Device or Fullscreen., ID: "  + msg)
@@ -70,7 +70,26 @@ function Ifrm(msg) {
     ifrm.style.height = "500px";
     ifrm.style.marginTop = "20px";
     document.body.appendChild(ifrm);
-    document.getElementById("menu").style.display = "none";
+    play = document.getElementById("play")
+    play.appendChild(ifrm)
+    let il = document.createElement("h1");
+    il.setAttribute("id", "title")
+    il.innerHTML = title
+    play.appendChild(il)
+    play.insertBefore(ifrm, play.firstChild)
+    let p = document.createElement("p")
+    p.innerHTML = plot
+    p.style.width = "800px"
+    play.appendChild(p)
+    let year = document.createElement("p")
+    year.innerHTML = "<b>Release Year:</b> " + date
+    play.appendChild(year)
+    let cat = document.createElement("p")
+    cat.innerHTML = "<b>Genres:</b> " + genres
+    play.appendChild(cat)
+    let rat = document.createElement("p")
+    rat.innerHTML = "<b>Rating:</b> " + rating + "/10"
+    play.appendChild(rat)
 }
 document.getElementById("btn").onclick = async function() {
     id = document.getElementById("mov");
@@ -97,12 +116,20 @@ document.getElementById("btn").onclick = async function() {
                 data = JSON.parse(data);
                 return data;
             }
+            async function get_post(id){
+                let response = await fetch('https://www.myapifilms.com/imdb/idIMDB?idIMDB=' + id + '&token=c236aee8-d43d-4646-bc9f-edac76062307');
+                let data = await response.json();
+                data = JSON.stringify(data);
+                data = JSON.parse(data);
+                return data;
+            }
             let ile = await get_data();
-            Ifrm(msg=ile["results"][0]["id"].slice(7, 17).replace("/", ""))
+            let dat = await get_post(id=ile["results"][0]["id"].slice(7, 17).replace("/", ""))
+            Ifrm(msg=ile["results"][0]["id"].slice(7, 17).replace("/", ""), title=itle=ile["results"][0]["title"], plot=dat["data"]["movies"][0]["plot"], date=dat["data"]["movies"][0]["releaseDate"].slice(0, 4), genres=dat["data"]["movies"][0]["genres"], rating = dat["data"]["movies"][0]["rating"])
             document.title = document.title.replace("VENOX Movies", ile["results"][0]["title"] + " | VENOX MOVIES")
             document.getElementById("title").innerHTML = ile["results"][0]["title"]
-            document.getElementById("navMenu").style.display = 'none'
             document.getElementById("movie").style.marginTop = '10px'
+            document.getElementById("movie").style.display = 'none'
             document.getElementById("stp").style.display = 'inline-block'
             document.getElementById("stp").onclick = function() {
                 window.location.reload()

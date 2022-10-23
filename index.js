@@ -27,12 +27,12 @@ document.getElementById("darkmode-toggle").onclick = function() {
         document.getElementById("se2").style.color = "white"
     } 
     else {
-        document.body.style.backgroundImage = "url(assets/bg.png)"
-        document.body.style.color = "black"
+        document.body.style.backgroundImage = "linear-gradient(rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), url(assets/bg.jpg)"
+        document.body.style.color = "white"
         document.body.style.backgroundColor = "none"
-        document.getElementById("home").style.color = "black"
-        document.getElementById("mov2").style.color = "black"
-        document.getElementById("se2").style.color = "black"
+        document.getElementById("home").style.color = "white"
+        document.getElementById("mov2").style.color = "white"
+        document.getElementById("se2").style.color = "white"
     }
 }
 var checkbox = document.getElementById("darkmode-toggle");
@@ -49,10 +49,10 @@ if (checked == true) {
     menu.style.filter = "invert(100%) sepia(0%) saturate(0%) hue-rotate(13deg) brightness(102%) contrast(102%)"
 }
 else {
-    document.body.style.backgroundImage = "url(assets/bg.png)"
-    document.body.style.color = "black"
+    document.body.style.backgroundImage = "linear-gradient(rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), url(assets/bg.jpg)"
+    document.body.style.color = "white"
     document.body.style.backgroundColor = "none"
-    document.getElementById("home").style.color = "black"
-    document.getElementById("mov2").style.color = "black"
-    document.getElementById("se2").style.color = "black"
+    document.getElementById("home").style.color = "white"
+    document.getElementById("mov2").style.color = "white"
+    document.getElementById("se2").style.color = "white"
 }
