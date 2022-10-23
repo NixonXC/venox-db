@@ -235,8 +235,9 @@ button {
     .movie input {
         border: 1px solid transparent !important;
         background: #1a161a !important;
-        color: rgb(255, 255, 255);
+        color: rgb(255, 255, 255) !important;
     }
+    .movie 
     .navMenu a {
         font-size: 20px;
         padding: 11px;
