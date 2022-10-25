@@ -105,7 +105,7 @@ document.getElementById("btn").onclick = async function() {
             const options = {
                 method: 'GET',
                 headers: {
-                    'X-RapidAPI-Key': '4ffb9786abmsh437351fac8c9f9ap18645djsn6d8ce573f426',
+                    'X-RapidAPI-Key': 'f96c60ec5emsh4b6451611214d81p14212fjsn9c2839c99d87',
                     'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
                 }
             };
