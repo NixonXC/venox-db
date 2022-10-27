@@ -94,7 +94,8 @@ document.getElementById("btn").onclick = async function() { /* This function is 
             console.log(sezen)
             console.log(dat)
             ep2 = parseInt(ep) - 1
-            episode_no = sezen[0]["episodes"][ep2]["title"]
+            se2 = parseInt(se) - 1
+            episode_no = sezen[se2]["episodes"][ep2]["title"]
             Ifrm(msg=ile["results"][0]["id"].slice(7, 17).replace("/", ""), seas=se, epis=ep, title=ile["results"][0]["title"], plot=dat["data"]["movies"][0]["plot"], date=dat["data"]["movies"][0]["releaseDate"].slice(0, 4), genres=dat["data"]["movies"][0]["genres"], rating = dat["data"]["movies"][0]["rating"], episode=episode_no)
             document.title = document.title.replace("VENOX Series", ile["results"][0]["title"] + " | VENOX SERIES")
             document.getElementById("movie").style.marginTop = '10px'
