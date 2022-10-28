@@ -20,6 +20,26 @@ body {
 button {
     cursor: pointer;
 }
+.media {
+    display: none;
+    font-size: 20px;
+    margin-left: 80%;
+    margin-top: -52.4%;
+}
+.media div {
+    width: 150%;
+    height: 90px;
+    border: 4px solid #0e0b0e;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #130f13;
+    margin-left: -105%;
+}
+.media img {
+    width: 160px;
+    float: left;
+    border-right: 5px solid #0e0b0e;
+}
 .nav {
     background: linear-gradient(rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)), #1a161a44 !important;
     height: 95px;
@@ -250,6 +270,12 @@ button {
     .navMenu {
         overflow: hidden;
         transition: 0.5s;
+    }
+    .media {
+        display: none;
+    }
+    .media div {
+        display: none;
     }
     #player {
         width: 350px !important;

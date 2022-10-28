@@ -1,7 +1,7 @@
 /* This Project is made for Educational Purposes only
 Last Updated: 2022 September */
 
-function Ifrm(msg, seas, epis, title, plot, date, genres, rating, episode) { /* This function is used to create the Iframe player */
+function Ifrm(msg, seas, epis, title, plot, date, genres, rating, episode, image_url) { /* This function is used to create the Iframe player */
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
         window.alert("Please Rotate your Device or Fullscreen., ID: "  + msg)
@@ -22,7 +22,7 @@ function Ifrm(msg, seas, epis, title, plot, date, genres, rating, episode) { /* 
     play.appendChild(il)
     play.insertBefore(ifrm, play.firstChild)
     let ep = document.createElement("p")
-    ep.innerHTML = "<b>Episode:</b> " + epis + "," + " <b>Season:</b> " + se
+    ep.innerHTML = "<b>Season:</b> " + seas + "," + " <b>Episode:</b> " + epis
     play.appendChild(ep)
     let p = document.createElement("p")
     p.innerHTML = plot
