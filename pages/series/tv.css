@@ -213,9 +213,11 @@ button {
     font-family: 'Quicksand', sans-serif;
 }
 #player {
-    width: 93.5% !important;
+    margin-top: -20px !important;
+    width: 100.6% !important;
     height: 530px !important;
-    box-shadow: 1px 1px 8px 8px #292329dc;
+    border-radius: 4px;
+    margin-left: -10px;
 }
 @media only screen and (max-width: 768px) {
     body {
