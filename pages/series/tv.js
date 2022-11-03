@@ -67,6 +67,13 @@ document.getElementById("btn").onclick = async function() { /* This function is 
 		            'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
                 }
             };
+            const backup = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': '4ffb9786abmsh437351fac8c9f9ap18645djsn6d8ce573f426',
+		            'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
+                }
+            };
             async function get_data(){
                 let response = await fetch('https://imdb8.p.rapidapi.com/title/find?q=' + msg, options);
                 let data = await response.json();
@@ -96,7 +103,17 @@ document.getElementById("btn").onclick = async function() { /* This function is 
             ep2 = parseInt(ep) - 1
             se2 = parseInt(se) - 1
             episode_no = sezen[se2]["episodes"][ep2]["title"]
-            Ifrm(msg=ile["results"][0]["id"].slice(7, 17).replace("/", ""), seas=se, epis=ep, title=ile["results"][0]["title"], plot=dat["data"]["movies"][0]["plot"], date=dat["data"]["movies"][0]["releaseDate"].slice(0, 4), genres=dat["data"]["movies"][0]["genres"], rating = dat["data"]["movies"][0]["rating"], episode=episode_no)
+            let epid = sezen[se2]["episodes"][ep2]["id"].slice(7, 17).replace("/", "")
+            async function get_plot(id=epid){
+                let response = await fetch('https://imdb8.p.rapidapi.com/title/get-plots?tconst=' + id, backup);
+                let data = await response.json();
+                data = JSON.stringify(data);
+                data = JSON.parse(data);
+                return data;
+            }
+            let plot = await get_plot();
+            console.log(plot)
+            Ifrm(msg=ile["results"][0]["id"].slice(7, 17).replace("/", ""), seas=se, epis=ep, title=ile["results"][0]["title"], plot=plot["plots"][0]["text"], date=dat["data"]["movies"][0]["releaseDate"].slice(0, 4), genres=dat["data"]["movies"][0]["genres"], rating = dat["data"]["movies"][0]["rating"], episode=episode_no)
             document.title = document.title.replace("VENOX Series", ile["results"][0]["title"] + " | VENOX SERIES")
             document.getElementById("movie").style.marginTop = '10px'
             document.getElementById("next").style.display = 'inline-block'
