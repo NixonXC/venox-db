@@ -213,7 +213,7 @@ button {
     font-family: 'Quicksand', sans-serif;
 }
 #player {
-    margin-top: -20px !important;
+    margin-top: 20px !important;
     width: 100.6% !important;
     height: 530px !important;
     border-radius: 4px;
@@ -288,6 +288,7 @@ button {
         width: 350px !important;
         height: 250px !important;
         margin-left: auto;
+        margin-top: -150px !important;
     }
     #title {
         margin-left: 10px;

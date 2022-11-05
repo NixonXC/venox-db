@@ -22,11 +22,13 @@ function Ifrm(msg, seas, epis, title, plot, date, genres, rating, episode, image
     play.appendChild(il)
     play.insertBefore(ifrm, play.firstChild)
     let ep = document.createElement("p")
+    ep.setAttribute("id", "epiarea")
     ep.innerHTML = "<b>Season:</b> " + seas + "," + " <b>Episode:</b> " + epis
     play.appendChild(ep)
     let p = document.createElement("p")
     p.innerHTML = plot
     p.style.width = "800px"
+    p.setAttribute("id", "plotarea")
     play.appendChild(p)
     let year = document.createElement("p")
     year.innerHTML = "<b>Release Year:</b> " + date
@@ -115,20 +117,55 @@ document.getElementById("btn").onclick = async function() { /* This function is 
             console.log(plot)
             Ifrm(msg=ile["results"][0]["id"].slice(7, 17).replace("/", ""), seas=se, epis=ep, title=ile["results"][0]["title"], plot=plot["plots"][0]["text"], date=dat["data"]["movies"][0]["releaseDate"].slice(0, 4), genres=dat["data"]["movies"][0]["genres"], rating = dat["data"]["movies"][0]["rating"], episode=episode_no)
             document.title = document.title.replace("VENOX Series", ile["results"][0]["title"] + " | VENOX SERIES")
-            document.getElementById("movie").style.marginTop = '10px'
             document.getElementById("next").style.display = 'inline-block'
             document.getElementById("back").style.display = 'inline-block'
             document.getElementById("btn").style.display = 'none'
-            document.getElementById("movie").style.display = 'none'
-            document.getElementById("next").onclick = function() {
+            document.getElementById("remove").style.display = 'none'
+            document.getElementById("sea").readOnly = true;
+            document.getElementById("name").readOnly = true;
+            document.getElementById("epi").readOnly = true;
+            document.getElementById("vis").style.marginTop = '-230px'
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if (isMobile) {
+                document.getElementById("vis").style.display = 'none'
+            }
+            document.getElementById("next").onclick = async function() {
+                window.alert("Please Wait")
                 let player = document.getElementById("player")
+                let plot = document.getElementById("plotarea")
+                let name = document.getElementById("epiarea")
+                let get_title = document.getElementById("title")
                 se = sea.value;
                 ep = epi.value;
                 document.getElementById("epi").value = parseInt(ep) + 1;
                 let finep = document.getElementById("epi").value;
+                let epfc = parseInt(finep) - 1
+                async function get_plot2(id=epid){
+                    let response = await fetch('https://imdb8.p.rapidapi.com/title/get-plots?tconst=' + id, backup);
+                    let data = await response.json();
+                    data = JSON.stringify(data);
+                    data = JSON.parse(data);
+                    return data;
+                }
+                async function get_season2(id=ile["results"][0]["id"].slice(7, 17).replace("/", "")){
+                    let response = await fetch('https://imdb8.p.rapidapi.com/title/get-seasons?tconst=' + id, opt2);
+                    let data = await response.json();
+                    data = JSON.stringify(data);
+                    data = JSON.parse(data);
+                    return data;
+                }
+                let sezen = await get_season2()
+                let epid = sezen[se2]["episodes"][epfc]["id"].slice(7, 17).replace("/", "")
+                let title = sezen[se2]["episodes"][epfc]["title"]
+                let col = await get_plot2()
+                plot.innerHTML = col["plots"][0]["text"]
+                name.innerHTML = "<b>Season:</b> " + se + "," + " <b>Episode:</b> " + finep
+                console.log(col["plots"][0]["text"])
+                get_title.innerHTML = ile["results"][0]["title"] + ": " + title
                 player.src = "https://vidsrc.me/embed/" + ile["results"][0]["id"].slice(7, 17).replace("/", "") + "/" + se + "-" + finep
             }
             document.getElementById("back").onclick = function() {
+                alert("THis feature won't change the html body, it will only change the video player's url/episode.")
                 let player = document.getElementById("player")
                 se = sea.value;
                 ep = epi.value;
